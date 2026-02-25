@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bryan A. Batula | Computer Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">BAB<span class="logo-dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Bryan A. Batula</h1>
+      <div class="hero-titles">
+        <span class="title-tag">Computer Engineer</span>
+        <span class="divider">·</span>
+        <span class="title-tag">AI-Augmented Developer</span>
+        <span class="divider">·</span>
+        <span class="title-tag">Security-Oriented SNA</span>
+      </div>
+      <p class="hero-tagline">
+        Architecting secure, intelligent applications at the intersection of <span class="accent">AI</span> and <span class="accent">cybersecurity</span>.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-social">
+        <a href="mailto:izme.bryanbatula@gmail.com" class="social-link" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com" target="_blank" class="social-link" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            A Computer Engineering professional specializing in <strong>AI-augmented development</strong> and <strong>System Network Administration</strong>.
+          </p>
+          <p>
+            Expert at leveraging generative AI tools to rapidly architect, debug, and audit full-stack applications while maintaining a <em>"Human-in-the-Loop"</em> approach to ensure code security and logic integrity.
+          </p>
+          <p>
+            Google Cybersecurity Certified with a strong foundation in risk management and data integrity. Focused on delivering efficient, database-driven solutions through rapid prototyping and deep code interpretation.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Dolores, Eastern Samar, PH</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+63 955-261-0754</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>izme.bryanbatula@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>BS Computer Engineering</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-robot"></i></div>
+            <h3>AI-Augmented Dev</h3>
+            <p>Rapid prototyping through intelligent prompt engineering and AI-assisted workflows.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Security-First</h3>
+            <p>Google Cybersecurity Certified. Every line of code reviewed through a security lens.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-database"></i></div>
+            <h3>Full-Stack Logic</h3>
+            <p>Proficient in Node.js, Express, PostgreSQL with a focus on data integrity.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>SNA Expertise</h3>
+            <p>NIST Framework, TCP/IP networking, and Linux/Windows system administration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI-Augmented Development</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">Rapid Prototyping</span>
+            <span class="skill-tag">AI-Assisted Debugging</span>
+            <span class="skill-tag">Vibe Coding</span>
+            <span class="skill-tag">Code Refactoring</span>
+            <span class="skill-tag">Human-in-the-Loop</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Full-Stack Technologies</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">Electron</span>
+            <span class="skill-tag">EJS Templating</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-lock"></i>
+            <h3>Database & Security</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">SQL Data Integrity</span>
+            <span class="skill-tag">Parameterized Queries</span>
+            <span class="skill-tag">SQLi Prevention</span>
+            <span class="skill-tag">Session Management</span>
+            <span class="skill-tag">Security-by-Design</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-server"></i>
+            <h3>Systems & Networking</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">NIST CSF</span>
+            <span class="skill-tag">TCP/IP</span>
+            <span class="skill-tag">Network Security</span>
+            <span class="skill-tag">Linux Administration</span>
+            <span class="skill-tag">Windows Administration</span>
+            <span class="skill-tag">Git / Version Control</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+              <a href="#" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Secure CRUD Application</h3>
+          <p class="project-description">
+            A functional prototype built by auditing AI-generated logic to ensure security best practices. Features parameterized queries to prevent SQL Injection and secure user session management.
+          </p>
+          <div class="project-tags">
+            <span>Node.js</span>
+            <span>PostgreSQL</span>
+            <span>Express</span>
+            <span>Security</span>
+          </div>
+        </div>
+
+        <div class="project-card project-card-featured">
+          <div class="project-badge">Featured</div>
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-desktop"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+              <a href="#" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Vibe Desktop Utility</h3>
+          <p class="project-description">
+            Utilized high-velocity "Vibe Coding" workflows to bridge web technologies into a native desktop environment. Focused on interpreting and connecting modular AI-generated components into a cohesive tool.
+          </p>
+          <div class="project-tags">
+            <span>Electron</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Node.js</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-user-circle"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+              <a href="#" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Personal Portfolio Website</h3>
+          <p class="project-description">
+            Managed deployment and server-side logic for a responsive personal showcase. Optimized front-end rendering through manual CSS adjustments and EJS templating.
+          </p>
+          <div class="project-tags">
+            <span>Express</span>
+            <span>EJS</span>
+            <span>Node.js</span>
+            <span>CSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-role">Administrative & IT Support Trainee</span>
+              <span class="timeline-badge">OJT</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-building"></i>
+              Land Bank of the Philippines – Borongan City
+            </div>
+            <ul class="timeline-bullets">
+              <li>Managed sensitive client documentation and data entry in a high-security banking environment.</li>
+              <li>Adhered to strict Data Privacy Act protocols, ensuring integrity and confidentiality of financial records.</li>
+              <li>Provided first-level technical assistance for digital and paper-based application workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-role">Web Development Trainee</span>
+              <span class="timeline-badge">OJT</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-laptop-code"></i>
+              Bytewise – Borongan City
+            </div>
+            <ul class="timeline-bullets">
+              <li>Participated in the development of responsive web modules and back-end logic.</li>
+              <li>Practiced code reading and interpretation to maintain project modularity and efficiency.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education Section -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-cert-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <span class="edu-type">Degree</span>
+            <h3>Bachelor of Science in Computer Engineering</h3>
+            <p class="edu-institution">Eastern Samar State University – Borongan City</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="cert-logo" />
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">Professional Certificate</span>
+            <h3>Google Cybersecurity Professional Certificate</h3>
+            <p class="cert-issuer">Coursera</p>
+            <ul class="cert-modules">
+              <li><i class="fas fa-check-circle"></i> Foundations of Cybersecurity</li>
+              <li><i class="fas fa-check-circle"></i> Play it Safe: Manage Security Risks</li>
+              <li><i class="fas fa-check-circle"></i> Connect and Protect: Networks and Network Security</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-intro">
+          <p>I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to connect — my inbox is always open.</p>
+        </div>
+        <div class="contact-cards">
+          <a href="mailto:izme.bryanbatula@gmail.com" class="contact-card">
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-value">izme.bryanbatula@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+639552610754" class="contact-card">
+            <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="contact-card-label">Phone</p>
+              <p class="contact-card-value">+63 955-261-0754</p>
+            </div>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-card">
+            <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-value">Connect with me</p>
+            </div>
+          </a>
+          <a href="https://github.com" target="_blank" class="contact-card">
+            <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <p class="contact-card-label">GitHub</p>
+              <p class="contact-card-value">View my repositories</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-copy">Designed & Built by <span class="accent">Bryan A. Batula</span></p>
+      <p class="footer-stack">HTML · CSS · Passion</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.highlight-card, .project-card, .timeline-item, .edu-card, .cert-card, .skill-category, .contact-card').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
