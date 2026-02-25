@@ -63,6 +63,52 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
 
 /* ================================================
+   INTRO OVERLAY
+   ================================================ */
+.no-scroll {
+  overflow: hidden;
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.intro-overlay.intro-exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-word {
+  font-family: var(--font-sans);
+  font-size: clamp(3.5rem, 12vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  user-select: none;
+}
+
+.intro-word.intro-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.intro-word.intro-hidden {
+  opacity: 0;
+  transform: translateY(-20px) scale(1.05);
+}
+
+/* ================================================
    NAVBAR
    ================================================ */
 .navbar {
@@ -405,9 +451,64 @@ img { max-width: 100%; display: block; }
    ================================================ */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 220px 1fr 1fr;
   gap: 3rem;
   align-items: start;
+}
+
+/* --- Photo --- */
+.about-photo-col {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo-wrap {
+  position: relative;
+  width: 200px;
+  height: 240px;
+  flex-shrink: 0;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 2;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter var(--transition), transform var(--transition);
+  display: block;
+}
+.about-photo-wrap:hover .about-photo {
+  filter: grayscale(0%) contrast(1.08);
+  transform: scale(1.02);
+}
+
+.about-photo-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: calc(var(--radius-lg) + 6px);
+  border: 2px solid var(--accent);
+  opacity: 0.35;
+  z-index: 1;
+  transition: opacity var(--transition);
+}
+.about-photo-wrap:hover .about-photo-ring {
+  opacity: 0.7;
+}
+
+.about-photo-glow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(99, 179, 237, 0.3) 0%, transparent 70%);
+  z-index: 0;
+  filter: blur(8px);
 }
 
 .about-text p {
@@ -964,7 +1065,9 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    ================================================ */
 @media (max-width: 1024px) {
-  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .about-photo-col { grid-column: 1 / -1; }
+  .about-photo-wrap { width: 160px; height: 200px; }
   .about-highlights { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .edu-cert-grid { grid-template-columns: 1fr; }
@@ -1001,6 +1104,9 @@ img { max-width: 100%; display: block; }
   .projects-grid { grid-template-columns: 1fr; }
   .contact-cards { grid-template-columns: 1fr; }
 
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-col { grid-column: auto; }
+  .about-photo-wrap { width: 150px; height: 185px; }
   .about-highlights { grid-template-columns: 1fr; }
 
   .section-header { gap: 0.75rem; }

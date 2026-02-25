@@ -10,7 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body class="no-scroll">
+
+  <!-- Intro Overlay -->
+  <div class="intro-overlay" id="intro-overlay">
+    <div class="intro-word" id="intro-word">Hi</div>
+  </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
@@ -80,6 +85,13 @@
         <div class="section-line"></div>
       </div>
       <div class="about-grid">
+        <div class="about-photo-col">
+          <div class="about-photo-wrap">
+            <img src="profile.jpg" alt="Bryan A. Batula" class="about-photo" />
+            <div class="about-photo-ring"></div>
+            <div class="about-photo-glow"></div>
+          </div>
+        </div>
         <div class="about-text">
           <p class="about-lead">
             A Computer Engineering professional specializing in <strong>AI-augmented development</strong> and <strong>System Network Administration</strong>.
@@ -464,6 +476,39 @@
       el.classList.add('fade-up');
       observer.observe(el);
     });
+
+    // Intro sequence: Hi → Hello → reveal portfolio
+    const overlay  = document.getElementById('intro-overlay');
+    const word     = document.getElementById('intro-word');
+    const sequence = ['Hi', 'Hello'];
+    let step = 0;
+
+    function nextStep() {
+      // Fade out current word
+      word.classList.remove('intro-visible');
+      word.classList.add('intro-hidden');
+
+      setTimeout(() => {
+        step++;
+        if (step < sequence.length) {
+          // Show next word
+          word.textContent = sequence[step];
+          word.classList.remove('intro-hidden');
+          word.classList.add('intro-visible');
+          setTimeout(nextStep, 900);
+        } else {
+          // Dismiss overlay and reveal page
+          overlay.classList.add('intro-exit');
+          document.body.classList.remove('no-scroll');
+        }
+      }, 500);
+    }
+
+    // Start: show first word after a brief pause
+    setTimeout(() => {
+      word.classList.add('intro-visible');
+      setTimeout(nextStep, 900);
+    }, 300);
   </script>
 
 </body>
