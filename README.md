@@ -42,20 +42,22 @@ In `index.html`, search for the placeholder `href="#"` values and replace them w
 ```html
 <!-- Hero social links -->
 <a href="https://linkedin.com/in/YOUR-PROFILE" ...>
-<a href="https://github.com/YOUR-USERNAME" ...>
+<a href="https://github.com/bryanbatula" ...>
 
 <!-- Contact section -->
 <a href="https://linkedin.com/in/YOUR-PROFILE" ...>
-<a href="https://github.com/YOUR-USERNAME" ...>
+<a href="https://github.com/bryanbatula" ...>
 ```
 
 ### Update project links
-Each project card has two icon links — one for the GitHub repo and one for a live demo:
+The **Personal Portfolio Website** project already points to your live site and GitHub repo:
 
 ```html
-<a href="https://github.com/YOUR-USERNAME/repo-name" class="project-link">
-<a href="https://your-live-demo.com" class="project-link">
+<a href="https://github.com/bryanbatula/MyPortfolio" ...>  <!-- GitHub repo -->
+<a href="https://bryanbatula.github.io/MyPortfolio/" ...>  <!-- Live demo -->
 ```
+
+For other projects, replace the `href="#"` placeholders with your real repo and demo URLs.
 
 ### Change the accent color
 In `style.css`, update the `--accent` variable at the top of the file:
