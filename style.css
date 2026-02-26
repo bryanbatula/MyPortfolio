@@ -662,12 +662,18 @@ img { max-width: 100%; display: block; }
   gap: 1.5rem;
 }
 
+/* First two cards (featured) span wider on large screens */
+.projects-grid .project-card:nth-child(1),
+.projects-grid .project-card:nth-child(2) {
+  grid-column: span 1;
+}
+
 .project-card {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
@@ -688,7 +694,7 @@ img { max-width: 100%; display: block; }
 
 .project-badge {
   position: absolute;
-  top: -1px; right: 1.5rem;
+  top: 0; right: 1.5rem;
   background: var(--accent);
   color: var(--bg-primary);
   font-size: 0.7rem;
@@ -696,24 +702,94 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.05em;
   padding: 0.2rem 0.7rem;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 3;
+}
+
+/* --- Project Image Preview --- */
+.project-preview {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+.project-preview-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.project-preview-overlay .project-img-alt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.project-card:hover .project-preview-overlay {
+  opacity: 1;
+}
+.project-card:hover .project-img {
+  transform: scale(1.04);
+}
+
+/* Placeholder for cards without screenshots */
+.project-preview-icon {
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-preview-placeholder {
+  width: 64px; height: 64px;
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1.75rem;
+  transition: transform var(--transition);
+}
+.project-card:hover .project-preview-placeholder {
+  transform: scale(1.08);
+}
+
+/* --- Project Body --- */
+.project-body {
+  padding: 1.4rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .project-icon {
-  width: 44px; height: 44px;
+  width: 38px; height: 38px;
   background: var(--accent-glow);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .project-links {
@@ -737,18 +813,19 @@ img { max-width: 100%; display: block; }
 }
 
 .project-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .project-description {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
   flex: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .project-tags {
@@ -1070,6 +1147,8 @@ img { max-width: 100%; display: block; }
   .about-photo-wrap { width: 160px; height: 200px; }
   .about-highlights { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid .project-card:nth-child(1),
+  .projects-grid .project-card:nth-child(2) { grid-column: span 1; }
   .edu-cert-grid { grid-template-columns: 1fr; }
 }
 
@@ -1102,6 +1181,8 @@ img { max-width: 100%; display: block; }
 
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid .project-card:nth-child(1),
+  .projects-grid .project-card:nth-child(2) { grid-column: span 1; }
   .contact-cards { grid-template-columns: 1fr; }
 
   .about-grid { grid-template-columns: 1fr; }
