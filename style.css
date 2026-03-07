@@ -980,6 +980,28 @@ img { max-width: 100%; display: block; }
   border-radius: 100px;
 }
 
+.timeline-badge-freelance {
+  color: var(--green);
+  background: rgba(104, 211, 145, 0.1);
+  border-color: rgba(104, 211, 145, 0.3);
+}
+
+.timeline-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.timeline-tech span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(99,179,237,0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
 .timeline-company {
   display: flex;
   align-items: center;
