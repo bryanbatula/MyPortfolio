@@ -10,12 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="no-scroll">
-
-  <!-- Intro Overlay -->
-  <div class="intro-overlay" id="intro-overlay">
-    <div class="intro-word" id="intro-word">Hi</div>
-  </div>
+<body>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
@@ -35,20 +30,22 @@
     </div>
   </nav>
 
+  <!-- Cursor Spotlight -->
+  <div class="cursor-spotlight" id="cursor-spotlight"></div>
+
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-bg">
       <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
     <div class="hero-content">
       <p class="hero-greeting">Hello, I'm</p>
       <h1 class="hero-name">Bryan A. Batula</h1>
       <div class="hero-titles">
-        <span class="title-tag">Computer Engineer</span>
-        <span class="divider">·</span>
-        <span class="title-tag">AI-Augmented Developer</span>
-        <span class="divider">·</span>
-        <span class="title-tag">Security-Oriented SNA</span>
+        <span class="typed-role" id="typed-role"></span><span class="typed-cursor" id="typed-cursor"></span>
       </div>
       <p class="hero-tagline">
         Architecting secure, intelligent applications at the intersection of <span class="accent">AI</span> and <span class="accent">cybersecurity</span>.
@@ -231,6 +228,84 @@
       </div>
       <div class="projects-grid">
 
+        <!-- Brew Bites POS -->
+        <div class="project-card">
+          <div class="project-preview">
+            <img src="pos.png" alt="Brew Bites POS Dashboard" class="project-img" />
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-mug-hot"></i></div>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                <a href="https://brew-bites-pos.vercel.app/" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Brew Bites — Cafe POS System</h3>
+            <p class="project-description">
+              A live point-of-sale web application for a café, featuring menu management, order processing, and a clean customer-facing interface. Deployed on Vercel.
+            </p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Automation Portfolio -->
+        <div class="project-card">
+          <div class="project-preview">
+            <img src="aidev.png" alt="AI Automation Developer Portfolio" class="project-img" />
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-bolt"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/bryanbatula/project1" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                <a href="https://bryanbatula.github.io/project1/" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">AI Automation Developer Portfolio</h3>
+            <p class="project-description">
+              Showcases intelligent automation solutions built with Microsoft Power Platform — covering invoice processing, employee onboarding workflows, and sales reporting automation using AI Builder and Power Automate.
+            </p>
+            <div class="project-tags">
+              <span>Power Automate</span>
+              <span>Power Apps</span>
+              <span>AI Builder</span>
+              <span>SharePoint</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Engineer & Language AI -->
+        <div class="project-card">
+          <div class="project-preview">
+            <img src="engai.png" alt="AI Engineer & Language AI Specialist" class="project-img" />
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-brain"></i></div>
+              <div class="project-links">
+                <a href="https://github.com/bryanbatula/Eng-setup" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                <a href="https://bryanbatula.github.io/Eng-setup/" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">AI Engineer & Language AI Specialist</h3>
+            <p class="project-description">
+              A live portfolio showcasing AI systems for language learning — including a speech coach, adaptive grammar tutor, NLP sentence analysis API, and an AI exam preparation system built with Python, LLMs, and Whisper.
+            </p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>LLMs</span>
+              <span>NLP</span>
+              <span>Speech AI</span>
+            </div>
+          </div>
+        </div>
+        
         <!-- BRIMS -->
         <div class="project-card project-card-featured">
           <div class="project-badge">Featured</div>
@@ -369,8 +444,6 @@
             </div>
           </div>
         </div>
-
-        
 
       </div>
     </div>
@@ -521,21 +594,19 @@
   </footer>
 
   <script>
-    // Navbar scroll behavior
+    // ── Navbar scroll behavior ──
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile nav toggle
+    // ── Mobile nav toggle ──
     const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
     });
-
-    // Close mobile nav on link click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
@@ -543,7 +614,29 @@
       });
     });
 
-    // Intersection Observer for scroll animations
+    // ── Active nav link on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-link:not(.nav-cta)');
+    const activateNav = () => {
+      const scrollY = window.scrollY + 100;
+      sections.forEach(sec => {
+        if (scrollY >= sec.offsetTop && scrollY < sec.offsetTop + sec.offsetHeight) {
+          navItems.forEach(a => {
+            a.classList.toggle('nav-active', a.getAttribute('href') === '#' + sec.id);
+          });
+        }
+      });
+    };
+    window.addEventListener('scroll', activateNav);
+
+    // ── Cursor spotlight ──
+    const spotlight = document.getElementById('cursor-spotlight');
+    document.addEventListener('mousemove', e => {
+      spotlight.style.left = e.clientX + 'px';
+      spotlight.style.top  = e.clientY + 'px';
+    });
+
+    // ── Scroll reveal with stagger ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -552,43 +645,64 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.highlight-card, .project-card, .timeline-item, .edu-card, .cert-card, .skill-category, .contact-card').forEach(el => {
+    document.querySelectorAll('.highlight-card, .project-card, .timeline-item, .edu-card, .cert-card, .skill-category, .contact-card').forEach((el, i) => {
       el.classList.add('fade-up');
+      el.style.transitionDelay = (i % 4) * 0.1 + 's';
       observer.observe(el);
     });
 
-    // Intro sequence: Hi → Hello → reveal portfolio
-    const overlay  = document.getElementById('intro-overlay');
-    const word     = document.getElementById('intro-word');
-    const sequence = ['Hi', 'Hello'];
-    let step = 0;
-
-    function nextStep() {
-      // Fade out current word
-      word.classList.remove('intro-visible');
-      word.classList.add('intro-hidden');
-
-      setTimeout(() => {
-        step++;
-        if (step < sequence.length) {
-          // Show next word
-          word.textContent = sequence[step];
-          word.classList.remove('intro-hidden');
-          word.classList.add('intro-visible');
-          setTimeout(nextStep, 900);
-        } else {
-          // Dismiss overlay and reveal page
-          overlay.classList.add('intro-exit');
-          document.body.classList.remove('no-scroll');
+    // Stagger skill tags when category enters view
+    const tagObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-tag').forEach((tag, i) => {
+            tag.style.animationDelay = i * 0.07 + 's';
+            tag.classList.add('tag-pop');
+          });
         }
-      }, 500);
-    }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.skill-category').forEach(el => tagObserver.observe(el));
 
-    // Start: show first word after a brief pause
-    setTimeout(() => {
-      word.classList.add('intro-visible');
-      setTimeout(nextStep, 900);
-    }, 300);
+    // ── 3D tilt on project cards ──
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width  - 0.5;
+        const y = (e.clientY - rect.top)  / rect.height - 0.5;
+        card.style.transform = `translateY(-6px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // ── Typewriter for roles ──
+    const roles = ['Computer Engineer', 'AI-Augmented Developer', 'Security-Oriented SNA'];
+    const typedEl  = document.getElementById('typed-role');
+    const cursorEl = document.getElementById('typed-cursor');
+    let roleIndex = 0, charIndex = 0, deleting = false;
+
+    function typeWriter() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        typedEl.textContent = current.slice(0, ++charIndex);
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeWriter, 1800);
+          return;
+        }
+      } else {
+        typedEl.textContent = current.slice(0, --charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(typeWriter, deleting ? 55 : 90);
+    }
+    setTimeout(typeWriter, 1200);
+
   </script>
 
 </body>
